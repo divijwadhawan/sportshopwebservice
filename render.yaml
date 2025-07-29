@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: football-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: ./start.sh
+    envVars:
+      - key: DB_URL
+        value: postgresql://admin:ZaKcqToSzGQK7YCuBlNEeJT3mVOYG04D@dpg-d24dfveuk2gs73cfgmv0-a.frankfurt-postgres.render.com/sportsdb1
+    plan: free
