@@ -6,7 +6,6 @@ import os
 
 # Database configuration (modify with your actual credentials)
 DB_URL = os.getenv("db_uri")
-#"postgresql://admin:ZaKcqToSzGQK7YCuBlNEeJT3mVOYG04D@dpg-d24dfveuk2gs73cfgmv0-a.frankfurt-postgres.render.com/sportsdb1"
 
 engine = create_engine(DB_URL)
 SessionLocal = sessionmaker(bind=engine)
