@@ -2,9 +2,11 @@ from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine, Column, Integer, String, Date, TIMESTAMP, select, func
 from sqlalchemy.orm import declarative_base, Session, sessionmaker
 import random
+import os
 
 # Database configuration (modify with your actual credentials)
-DB_URL = "postgresql://admin:ZaKcqToSzGQK7YCuBlNEeJT3mVOYG04D@dpg-d24dfveuk2gs73cfgmv0-a.frankfurt-postgres.render.com/sportsdb1"
+DB_URL = os.getenv("db_uri")
+#"postgresql://admin:ZaKcqToSzGQK7YCuBlNEeJT3mVOYG04D@dpg-d24dfveuk2gs73cfgmv0-a.frankfurt-postgres.render.com/sportsdb1"
 
 engine = create_engine(DB_URL)
 SessionLocal = sessionmaker(bind=engine)
